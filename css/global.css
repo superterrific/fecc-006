@@ -1,0 +1,166 @@
+:root {
+  --color-dark: #353535;
+  --color-light: #ffffff;
+  --color-mid: #efefef;
+  --color-slate: #7F7F7F;
+}
+
+/* -- Resets ---------------------------------------------------------- */
+
+/* Based on Andy Bell's Modern Reset
+https://github.com/hankchizljaw/modern-css-reset/blob/master/src/reset.css
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global ----------------------------------------------- */
+body {
+	background: var(--color-light);
+	font-family: sans-serif;
+	font-size: 1rem;
+  padding: 1rem;
+}
+
+/* Let older browsers use main instead of div */
+main {
+  display: block;
+}
+
+/* Layout ----------------------------------------------- */
+.wrapper {
+  width: 90vw;
+	overflow-x: auto;
+  padding: 1rem 0rem;
+	margin: 5rem auto;
+  box-shadow:
+    inset 1.5rem 0 1.5rem -1.9rem var(--color-slate),
+    inset -1.5rem 0 1.5rem -1.9rem var(--color-slate);
+}
+
+
+@media (min-width: 48rem) {
+ .wrapper {
+   width: 46rem;
+   box-shadow: unset;
+ }
+}
+
+/* Flex fallback --------------------------------------- */
+.container {
+  display: flex;
+}
+
+.container li {
+  justify-content: space-between;
+	margin: .5rem;
+	padding: 3rem 4rem;
+  background: #efefef;
+  color: #353535;
+  border: 1px solid #7F7F7F;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container li {
+		padding-right: 2.5rem;
+	  padding-left: 2.5rem;
+	}
+}
+
+/* Grid ------------------------------------------------ */
+
+@supports (display: grid) {
+  .container {
+    display: grid;
+  	grid-template-columns: repeat(8, 10rem);
+  	grid-gap: 1rem;
+  }
+
+  .container li {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: var(--color-mid);
+    color: var(--color-dark);
+    border: 1px solid var(--color-slate);
+    margin: 0;
+    }
+
+   @media (min-width: 48rem) {
+  	.container {
+  		display: grid;
+  		grid-template-columns: repeat(4, 10rem);
+  		grid-gap: 1rem;
+  	}
+  }
+}
