@@ -105,7 +105,6 @@ main {
     inset -1.5rem 0 1.5rem -1.9rem var(--color-slate);
 }
 
-
 @media (min-width: 48rem) {
  .wrapper {
    width: 46rem;
